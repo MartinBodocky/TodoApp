@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TodoApp.OperationContracts
 {
-    public class Class1
+    public interface ITodoManager
     {
     }
 }
