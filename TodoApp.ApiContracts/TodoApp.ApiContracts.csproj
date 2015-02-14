@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,11 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\BaseTableDto.cs" />
+    <Compile Include="DataContracts\CommentDto.cs" />
+    <Compile Include="DataContracts\CustomerDto.cs" />
+    <Compile Include="DataContracts\GeolocationDto.cs" />
+    <Compile Include="DataContracts\TodoDto.cs" />
+    <Compile Include="Enumerators\ResponseCodeType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultTypes\DeviceActionResultType.cs" />
+    <Compile Include="ResultTypes\RegisterDeviceOutcome.cs" />
+    <Compile Include="ServiceContracts\Device\RegisterDeviceRequest.cs" />
+    <Compile Include="ServiceContracts\Device\RegisterDeviceResponse.cs" />
+    <Compile Include="ServiceContracts\RequestBase.cs" />
+    <Compile Include="ServiceContracts\ResponseBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataContracts\" />
-    <Folder Include="ServiceContracts\" />
+    <Folder Include="ServiceContracts\Comment\" />
+    <Folder Include="ServiceContracts\Customer\" />
+    <Folder Include="ServiceContracts\Todo\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

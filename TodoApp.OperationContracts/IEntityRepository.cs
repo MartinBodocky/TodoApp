@@ -17,5 +17,8 @@ namespace TodoApp.OperationContracts
         IGenericRepository<Customer> CustomerRepository { get; }
         IGenericRepository<Todo> TodoRepository { get; }
         IGenericRepository<Comment> CommentRepository { get; }
+
+        Task SaveTask();
+        void Save();
     }
 }
