@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TodoApp.Data;
-using TodoApp.Data.Migrations;
 
 namespace TodoApp.Init
 {
@@ -23,27 +22,42 @@ namespace TodoApp.Init
                 if (key.KeyChar.Equals('y'))
                 {
                     // update migration
-                    Console.WriteLine("Database migrate initializer starting..");
-                    var migrationEntityContext = new MigrateDatabaseToLatestVersion<EntityContext, Configuration>();
+
+                    Console.WriteLine("Entity database migrate initializer starting..");
+                    var migrationEntityContext = new MigrateDatabaseToLatestVersion<EntityContext, TodoApp.Data.EntityMigrations.Configuration>();
                     Database.SetInitializer(migrationEntityContext);
                     migrationEntityContext.InitializeDatabase(new EntityContext());
+
+                    Console.WriteLine("Support database migrate initializer starting..");
+                    var migrationSupportContext = new MigrateDatabaseToLatestVersion<SupportContext, TodoApp.Data.SupportMigrations.Configuration>();
+                    Database.SetInitializer(migrationSupportContext);
+                    migrationSupportContext.InitializeDatabase(new SupportContext());
                 }
                 else
                 {
                     // re-create db
-                    Console.WriteLine("Database initializer starting..");
+                    Console.WriteLine("Entity database initializer starting..");
                     var dbInitializer = new EntityContextInitializer();
                     Database.SetInitializer(dbInitializer);
                     dbInitializer.InitializeDatabase(new EntityContext());
 
+                    Console.WriteLine("Support database initializer starting..");
+                    var dbSupportInitializer = new SupportContextInitializer();
+                    Database.SetInitializer(dbSupportInitializer);
+                    dbSupportInitializer.InitializeDatabase(new SupportContext());
                 }
 
+                Console.WriteLine();
+                Console.WriteLine("Initializer finished.. Click any key to exit.");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
-                throw;
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine();
             }
+
+            Console.ReadKey();
         }
     }
 }

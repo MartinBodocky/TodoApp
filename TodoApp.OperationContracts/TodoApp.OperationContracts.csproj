@@ -42,9 +42,17 @@
     <Compile Include="ICustomerManager.cs" />
     <Compile Include="IDeviceManager.cs" />
     <Compile Include="IFacebookManager.cs" />
-    <Compile Include="IDataRepository.cs" />
+    <Compile Include="IGenericRepository.cs" />
+    <Compile Include="ISupportRepository.cs" />
     <Compile Include="ITodoManager.cs" />
+    <Compile Include="IEntityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TodoApp.DataContracts\TodoApp.DataContracts.csproj">
+      <Project>{2a51eb41-763f-4d56-8dec-51a3c4db63e4}</Project>
+      <Name>TodoApp.DataContracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

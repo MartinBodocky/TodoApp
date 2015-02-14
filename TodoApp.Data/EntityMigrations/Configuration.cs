@@ -1,18 +1,19 @@
-namespace TodoApp.Data.Migrations
+namespace TodoApp.Data.EntityMigrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<TodoApp.Data.EntityContext>
+    public sealed class Configuration : DbMigrationsConfiguration<EntityContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"EntityMigrations";
         }
 
-        protected override void Seed(TodoApp.Data.EntityContext context)
+        protected override void Seed(EntityContext context)
         {
             //  This method will be called after migrating to the latest version.
 

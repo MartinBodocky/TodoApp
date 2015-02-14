@@ -49,8 +49,10 @@
   <ItemGroup>
     <Compile Include="Entities\BaseTable.cs" />
     <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\CommunicationLog.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Device.cs" />
+    <Compile Include="Entities\ExceptionLog.cs" />
     <Compile Include="Entities\FacebookToken.cs" />
     <Compile Include="Entities\Platform.cs" />
     <Compile Include="Entities\Todo.cs" />

@@ -9,7 +9,7 @@ using TodoApp.DataContracts.Entities;
 
 namespace TodoApp.Data
 {
-    public class EntityContext : DbContext
+    public class EntityContext : DbContext, IEntityContext
     {
         public EntityContext() : base("TodoAppContext")
         {

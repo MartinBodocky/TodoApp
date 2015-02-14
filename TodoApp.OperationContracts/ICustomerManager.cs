@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TodoApp.OperationContracts
 {
+    /// <summary>
+    /// Interface defines actions on customer functionality
+    /// </summary>
     public interface ICustomerManager
     {
     }

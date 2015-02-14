@@ -1,4 +1,4 @@
-namespace TodoApp.Data.Migrations
+namespace TodoApp.Data.EntityMigrations
 {
     using System;
     using System.Data.Entity.Migrations;

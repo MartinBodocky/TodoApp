@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TodoApp.OperationContracts
 {
-    
+    /// <summary>
+    /// Device interface defines functions on device and manage devices
+    /// </summary>
     public interface IDeviceManager
     {
     }
