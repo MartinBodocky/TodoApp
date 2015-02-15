@@ -39,7 +39,7 @@ namespace TodoApp.RequestProcessing
         /// explicitly specified.
         /// Note that the auth token is returned during registration
         /// </summary>
-        public virtual bool RequiresAuthToken
+        public virtual bool RequiresDeviceToken
         {
             get { return true; }
         }
@@ -63,7 +63,7 @@ namespace TodoApp.RequestProcessing
         {
             if (string.IsNullOrEmpty(request.DeviceToken))
             {
-                response.StatusCode = ResponseCodeType.MissingAuthToken;
+                response.StatusCode = ResponseCodeType.MissingDeviceToken;
 
                 return false;
             }

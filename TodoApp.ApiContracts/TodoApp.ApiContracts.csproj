@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -43,21 +46,57 @@
     <Compile Include="DataContracts\BaseTableDto.cs" />
     <Compile Include="DataContracts\CommentDto.cs" />
     <Compile Include="DataContracts\CustomerDto.cs" />
+    <Compile Include="DataContracts\FacebookTokenDto.cs" />
     <Compile Include="DataContracts\GeolocationDto.cs" />
     <Compile Include="DataContracts\TodoDto.cs" />
     <Compile Include="Enumerators\ResponseCodeType.cs" />
+    <Compile Include="GlobalKernel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultTypes\CommentActionResultType.cs" />
+    <Compile Include="ResultTypes\CustomerActionResultType.cs" />
     <Compile Include="ResultTypes\DeviceActionResultType.cs" />
     <Compile Include="ResultTypes\RegisterDeviceOutcome.cs" />
-    <Compile Include="ServiceContracts\Device\RegisterDeviceRequest.cs" />
-    <Compile Include="ServiceContracts\Device\RegisterDeviceResponse.cs" />
+    <Compile Include="ResultTypes\TodoActionResultType.cs" />
+    <Compile Include="ServiceContracts\Comment\AddRequest.cs" />
+    <Compile Include="ServiceContracts\Comment\AddResponse.cs" />
+    <Compile Include="ServiceContracts\Comment\GetListRequest.cs" />
+    <Compile Include="ServiceContracts\Comment\GetListResponse.cs" />
+    <Compile Include="ServiceContracts\Comment\RemoveRequest.cs" />
+    <Compile Include="ServiceContracts\Comment\RemoveResponse.cs" />
+    <Compile Include="ServiceContracts\Comment\UpdateRequest.cs" />
+    <Compile Include="ServiceContracts\Comment\UpdateResponse.cs" />
+    <Compile Include="ServiceContracts\Customer\LoadRequest.cs" />
+    <Compile Include="ServiceContracts\Customer\LoadResponse.cs" />
+    <Compile Include="ServiceContracts\Customer\LogInFacebookRequest.cs" />
+    <Compile Include="ServiceContracts\Customer\LogInFacebookResponse.cs" />
+    <Compile Include="ServiceContracts\Customer\LogInRequest.cs" />
+    <Compile Include="ServiceContracts\Customer\LogInResponse.cs" />
+    <Compile Include="ServiceContracts\Customer\LogOutRequest.cs" />
+    <Compile Include="ServiceContracts\Customer\LogOutResponse.cs" />
+    <Compile Include="ServiceContracts\Customer\RegisterFacebookRequest.cs" />
+    <Compile Include="ServiceContracts\Customer\RegisterFacebookResponse.cs" />
+    <Compile Include="ServiceContracts\Customer\RegisterRequest.cs" />
+    <Compile Include="ServiceContracts\Customer\RegisterResponse.cs" />
+    <Compile Include="ServiceContracts\Customer\UpdateRequest.cs" />
+    <Compile Include="ServiceContracts\Customer\UpdateResponse.cs" />
+    <Compile Include="ServiceContracts\Device\RegisterRequest.cs" />
+    <Compile Include="ServiceContracts\Device\RegisterResponse.cs" />
+    <Compile Include="ServiceContracts\Device\UpdateRequest.cs" />
+    <Compile Include="ServiceContracts\Device\UpdateResponse.cs" />
     <Compile Include="ServiceContracts\RequestBase.cs" />
     <Compile Include="ServiceContracts\ResponseBase.cs" />
+    <Compile Include="ServiceContracts\Todo\AddRequest.cs" />
+    <Compile Include="ServiceContracts\Todo\AddResponse.cs" />
+    <Compile Include="ServiceContracts\Todo\GetListRequest.cs" />
+    <Compile Include="ServiceContracts\Todo\GetListResponse.cs" />
+    <Compile Include="ServiceContracts\Todo\RemoveRequest.cs" />
+    <Compile Include="ServiceContracts\Todo\RemoveResponse.cs" />
+    <Compile Include="ServiceContracts\Todo\UpdateRequest.cs" />
+    <Compile Include="ServiceContracts\Todo\UpdateResponse.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ServiceContracts\Comment\" />
-    <Folder Include="ServiceContracts\Customer\" />
-    <Folder Include="ServiceContracts\Todo\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

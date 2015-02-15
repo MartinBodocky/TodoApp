@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICommentManager.cs" />
     <Compile Include="ICustomerManager.cs" />
     <Compile Include="IDeviceManager.cs" />
     <Compile Include="IExceptionManager.cs" />

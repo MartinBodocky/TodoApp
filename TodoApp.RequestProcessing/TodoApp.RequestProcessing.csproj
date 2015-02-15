@@ -39,12 +39,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comment\AddCommentRequestProcessor.cs" />
+    <Compile Include="Comment\GetListCommentRequestProcessor.cs" />
+    <Compile Include="Comment\RemoveCommentRequestProcessor.cs" />
+    <Compile Include="Comment\UpdateCommentRequestProcessor.cs" />
+    <Compile Include="Customer\LoadCustomerRequestProcessor.cs" />
+    <Compile Include="Customer\LogInFacebookRequestProcessor.cs" />
+    <Compile Include="Customer\LogInRequestProcessor.cs" />
+    <Compile Include="Customer\LogOutRequestProcessor.cs" />
+    <Compile Include="Customer\RegisterCustomerFacebookRequestProcessor.cs" />
+    <Compile Include="Customer\RegisterCustomerRequestProcessor.cs" />
+    <Compile Include="Customer\UpdateCustomerRequestProcessor.cs" />
+    <Compile Include="Device\UpdateDeviceRequestProcessor.cs" />
     <Compile Include="IRequestManager.cs" />
     <Compile Include="IRequestProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestManager.cs" />
     <Compile Include="RequestProcessor.cs" />
-    <Compile Include="DeviceService\RegisterDeviceRequestProcessor.cs" />
+    <Compile Include="Device\RegisterDeviceRequestProcessor.cs" />
+    <Compile Include="Todo\AddTodoRequestProcessor.cs" />
+    <Compile Include="Todo\GetListTodoRequestProcessor.cs" />
+    <Compile Include="Todo\RemoveTodoRequestProcessor.cs" />
+    <Compile Include="Todo\UpdateTodoRequestProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TodoApp.ApiContracts\TodoApp.ApiContracts.csproj">

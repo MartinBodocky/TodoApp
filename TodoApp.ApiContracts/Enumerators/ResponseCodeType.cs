@@ -50,6 +50,6 @@ namespace TodoApp.ApiContracts.Enumerators
         /// <summary>
         ///     Missing Device token
         /// </summary>
-        MissingAuthToken = 9
+        MissingDeviceToken = 9
     }
 }

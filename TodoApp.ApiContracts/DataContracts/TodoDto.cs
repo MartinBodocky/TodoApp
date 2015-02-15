@@ -21,5 +21,8 @@ namespace TodoApp.ApiContracts.DataContracts
 
         [DataMember]
         public bool IsPublic { get; set; }
+
+        [DataMember]
+        public CustomerDto[] RequiredUsers { get; set; }
     }
 }
