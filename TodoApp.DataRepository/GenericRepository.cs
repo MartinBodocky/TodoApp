@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using TodoApp.OperationContracts;
 
-namespace TodoApp.Framework
+namespace TodoApp.DataRepository
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        private DbContext _context;
+        private IContext _context;
         private DbSet<TEntity> _dbSet;
 
-        public GenericRepository(DbContext context)
+        public GenericRepository(IContext context)
         {
             _context = context;
             _dbSet = _context.Set<TEntity>();
@@ -58,7 +58,10 @@ namespace TodoApp.Framework
 
         public async Task Insert(TEntity entity)
         {
-            _dbSet.Add(entity);
+            await Task.Run(() =>
+            {
+                _dbSet.Add(entity);
+            });
         }
 
         public async Task Delete(object id)
@@ -69,16 +72,22 @@ namespace TodoApp.Framework
 
         public async Task Delete(TEntity entity)
         {
-            if (_context.Entry<TEntity>(entity).State == EntityState.Detached)
-                _dbSet.Attach(entity);
+            await Task.Run(() =>
+            {
+                if (_context.Entry<TEntity>(entity).State == EntityState.Detached)
+                    _dbSet.Attach(entity);
 
-            _dbSet.Remove(entity);
+                _dbSet.Remove(entity);
+            });
         }
 
         public async Task Update(TEntity entity)
         {
-            _dbSet.Attach(entity);
-            _context.Entry<TEntity>(entity).State = EntityState.Modified;
+            await Task.Run(() =>
+            {
+                _dbSet.Attach(entity);
+                _context.Entry<TEntity>(entity).State = EntityState.Modified;
+            });
         }
     }
 }

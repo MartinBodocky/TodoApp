@@ -13,7 +13,7 @@ using TodoApp.WebApi.Filters;
 namespace TodoApp.WebApi.Controllers
 {
     [ExceptionHandlingFilter]
-    [Route("api/Todo")]
+    [RoutePrefix("api/Todo")]
     public class TodoController : ApiController
     {
         private IRequestManager _requestManager;

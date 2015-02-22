@@ -52,8 +52,6 @@
       <DependentUpon>201502140858520_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityMigrations\Configuration.cs" />
-    <Compile Include="IEntityContext.cs" />
-    <Compile Include="ISupportContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupportContext.cs" />
     <Compile Include="SupportMigrations\201502140859344_Initial.cs" />
@@ -70,6 +68,10 @@
     <ProjectReference Include="..\TodoApp.DataContracts\TodoApp.DataContracts.csproj">
       <Project>{2a51eb41-763f-4d56-8dec-51a3c4db63e4}</Project>
       <Name>TodoApp.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TodoApp.OperationContracts\TodoApp.OperationContracts.csproj">
+      <Project>{3d9ca2f5-9411-471c-a9f7-f61e1c435de4}</Project>
+      <Name>TodoApp.OperationContracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TodoApp.Data;
 using TodoApp.DataContracts.Entities;
 using TodoApp.OperationContracts;
 
-namespace TodoApp.Framework
+namespace TodoApp.DataRepository
 {
     /// <summary>
     /// Implement support repository properties
@@ -26,10 +24,10 @@ namespace TodoApp.Framework
 
         public IGenericRepository<CommunicationLog> CommunicationLog
         {
-            get 
+            get
             {
                 if (this._communicationLog == null)
-                    this._communicationLog = new GenericRepository<CommunicationLog>((DbContext)_context);
+                    this._communicationLog = new GenericRepository<CommunicationLog>(_context);
 
                 return this._communicationLog;
             }
@@ -37,10 +35,10 @@ namespace TodoApp.Framework
 
         public IGenericRepository<ExceptionLog> ExceptionLog
         {
-            get 
+            get
             {
                 if (this._exceptionLog == null)
-                    this._exceptionLog = new GenericRepository<ExceptionLog>((DbContext)_context);
+                    this._exceptionLog = new GenericRepository<ExceptionLog>(_context);
 
                 return this._exceptionLog;
             }

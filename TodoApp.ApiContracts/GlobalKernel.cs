@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace TodoApp.ApiContracts
 {
     /// <summary>
-    /// Global Ninjext kernel
+    /// Global Ninject kernel
     /// </summary>
     public static class GlobalKernel
     {

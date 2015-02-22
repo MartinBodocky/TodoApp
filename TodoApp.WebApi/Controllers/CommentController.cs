@@ -13,7 +13,7 @@ using TodoApp.WebApi.Filters;
 namespace TodoApp.WebApi.Controllers
 {
     [ExceptionHandlingFilter]
-    [Route("api/Comment")]
+    [RoutePrefix("api/Comment")]
     public class CommentController : ApiController
     {
         private IRequestManager _requestManager;

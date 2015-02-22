@@ -4,11 +4,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TodoApp.Data;
 using TodoApp.DataContracts.Entities;
 using TodoApp.OperationContracts;
 
-namespace TodoApp.Framework
+namespace TodoApp.DataRepository
 {
     /// <summary>
     /// Implements repository properties
@@ -31,10 +30,10 @@ namespace TodoApp.Framework
 
         public IGenericRepository<Device> DeviceRepository
         {
-            get 
+            get
             {
                 if (this._devices == null)
-                    this._devices = new GenericRepository<Device>((DbContext)_context);
+                    this._devices = new GenericRepository<Device>(_context);
 
                 return this._devices;
             }
@@ -42,10 +41,10 @@ namespace TodoApp.Framework
 
         public IGenericRepository<Platform> PlatformRepository
         {
-            get 
+            get
             {
                 if (this._platforms == null)
-                    this._platforms = new GenericRepository<Platform>((DbContext)_context);
+                    this._platforms = new GenericRepository<Platform>(_context);
 
                 return this._platforms;
             }
@@ -53,10 +52,10 @@ namespace TodoApp.Framework
 
         public IGenericRepository<Customer> CustomerRepository
         {
-            get 
+            get
             {
                 if (this._customers == null)
-                    this._customers = new GenericRepository<Customer>((DbContext)_context);
+                    this._customers = new GenericRepository<Customer>(_context);
 
                 return this._customers;
             }
@@ -64,10 +63,10 @@ namespace TodoApp.Framework
 
         public IGenericRepository<Todo> TodoRepository
         {
-            get 
+            get
             {
                 if (this._todos == null)
-                    this._todos = new GenericRepository<Todo>((DbContext)_context);
+                    this._todos = new GenericRepository<Todo>(_context);
 
                 return this._todos;
             }
@@ -78,7 +77,7 @@ namespace TodoApp.Framework
             get
             {
                 if (this._comments == null)
-                    this._comments = new GenericRepository<Comment>((DbContext)_context);
+                    this._comments = new GenericRepository<Comment>(_context);
 
                 return this._comments;
             }

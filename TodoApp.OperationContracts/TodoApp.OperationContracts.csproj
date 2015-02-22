@@ -30,7 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,12 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICommentManager.cs" />
+    <Compile Include="IContext.cs" />
     <Compile Include="ICustomerManager.cs" />
     <Compile Include="IDeviceManager.cs" />
+    <Compile Include="IEntityContext.cs" />
     <Compile Include="IExceptionManager.cs" />
     <Compile Include="IFacebookManager.cs" />
     <Compile Include="IGenericRepository.cs" />
     <Compile Include="IPlatformManager.cs" />
+    <Compile Include="ISupportContext.cs" />
     <Compile Include="ISupportRepository.cs" />
     <Compile Include="ITodoManager.cs" />
     <Compile Include="IEntityRepository.cs" />
@@ -60,6 +71,10 @@
       <Project>{2a51eb41-763f-4d56-8dec-51a3c4db63e4}</Project>
       <Name>TodoApp.DataContracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

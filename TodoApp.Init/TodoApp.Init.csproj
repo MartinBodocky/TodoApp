@@ -64,6 +64,10 @@
       <Project>{6ea07dcf-b337-49ec-8f93-eb52db85d6bc}</Project>
       <Name>TodoApp.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TodoApp.OperationContracts\TodoApp.OperationContracts.csproj">
+      <Project>{3d9ca2f5-9411-471c-a9f7-f61e1c435de4}</Project>
+      <Name>TodoApp.OperationContracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

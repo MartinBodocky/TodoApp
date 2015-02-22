@@ -35,7 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,8 +60,37 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="CommentManagerTests.cs" />
+    <Compile Include="CustomerManagerTests.cs" />
+    <Compile Include="DeviceManagerTests.cs" />
+    <Compile Include="ExceptionManagerTests.cs" />
+    <Compile Include="FacebookManagerTests.cs" />
+    <Compile Include="MockEF.cs" />
+    <Compile Include="PlatformManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TodoApp.DataContracts\TodoApp.DataContracts.csproj">
+      <Project>{2a51eb41-763f-4d56-8dec-51a3c4db63e4}</Project>
+      <Name>TodoApp.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TodoApp.DataRepository\TodoApp.DataRepository.csproj">
+      <Project>{e423ec37-8dd5-42eb-a9d4-f2a6e3694995}</Project>
+      <Name>TodoApp.DataRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TodoApp.Framework\TodoApp.Framework.csproj">
+      <Project>{500878b4-ee2d-4f81-bad4-e0c041aec912}</Project>
+      <Name>TodoApp.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TodoApp.OperationContracts\TodoApp.OperationContracts.csproj">
+      <Project>{3d9ca2f5-9411-471c-a9f7-f61e1c435de4}</Project>
+      <Name>TodoApp.OperationContracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
